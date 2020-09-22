@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MarkingActivity"
+    tools:context=".Marking2Activity"
     android:orientation="vertical"
     android:gravity="center"
+
     >
 
     <LinearLayout
@@ -20,25 +21,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30sp"
             android:gravity="center"
-            android:text="@string/page_name"
+            android:text="@string/page_name2"
             android:textColor="#fec63d"
             android:textSize="35dp"
             android:textStyle="bold" />
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="150dp"
-                android:gravity="center"
-                android:src="@drawable/cal" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,12 +38,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
-                android:text="@string/ass1"
+                android:text="@string/ca_marks"
                 android:textColor="#131312"
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/ass1"
+                android:id="@+id/ca_marks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -75,69 +62,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
-                android:text="@string/ass2"
+                android:text="@string/total_marks"
                 android:textColor="#131312"
                 android:textSize="25sp" />
 
             <EditText
+                android:id="@+id/total_marks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ass2"
-                android:textColor="#feb63d"
                 android:gravity="center"
-                />
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="@string/mid_marks"
-                android:textColor="#191818"
-                android:textSize="25sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mid_marks"
-                android:textColor="#feb63d"
-                android:gravity="center"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="@string/final_marks"
-                android:textColor="#1E1E1E"
-                android:textSize="25sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/final_marks"
-                android:textColor="#feb63d"
-                android:gravity="center"
-                />
+                android:textColor="#171615" />
 
         </LinearLayout>
 
@@ -150,17 +84,16 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="200sp"
+            android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="37dp"
             android:background="#000000"
-            android:text="@string/btn_cal"
+            android:text="@string/btn_save"
             android:textColor="#feb63d"
             android:textSize="18sp"
 
-            android:id="@+id/btn_cal"
+            android:id="@+id/btn_save"
             />
 
     </LinearLayout>
-
 </LinearLayout>

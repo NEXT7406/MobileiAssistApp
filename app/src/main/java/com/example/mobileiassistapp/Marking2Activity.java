@@ -7,25 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MarkingActivity extends AppCompatActivity {
+public class Marking2Activity extends AppCompatActivity {
 
-    Button btn_cal;
+    Button btn_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marking);
+        setContentView(R.layout.marking2activity);
 
-        btn_cal = findViewById(R.id.btn_cal);
+        btn_save = findViewById(R.id.btn_save);
 
-        btn_cal.setOnClickListener(new View.OnClickListener() {
+        btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MarkingActivity.this, Marking2Activity.class);
-                startActivity(intent);
+                startActivity(new Intent(Marking2Activity.this, Marking3Activity.class));
 
             }
         });
+
     }
 }
