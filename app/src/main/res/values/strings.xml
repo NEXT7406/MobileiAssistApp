@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">MobileiAssistApp</string>
+    <string name="msg1_gpa"><u>GPA Calculator</u></string>
+    <string name="msg2_gpa">Subject</string>
+    <string name="msg3_gpa">Credit</string>
+    <string name="msg4_gpa">Grade</string>
+    <string name="msg5_gpa">Subject 01</string>
+    <string name="msg6_gpa">Subject 02</string>
+    <string name="msg7_gpa">Subject 03</string>
+    <string name="msg8_gpa">Subject 04</string>
+
+    <string-array name="Credit">
+        <item>0.0</item>
+        <item>1.0</item>
+        <item>2.0</item>
+        <item>3.0</item>
+        <item>4.0</item>
+    </string-array>
+
+
+    <string-array name="Grade">
+        <item>Grade</item>
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>D+</item>
+        <item>D</item>
+        <item>E</item>
+    </string-array>
+
+    <string name="msg9_gpa">Your GPA is</string>
+    <string name="msg10_gpa">Save my GPA</string>
+
 </resources>
