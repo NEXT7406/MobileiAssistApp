@@ -62,7 +62,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
 
         String dateString1 = format.format(calView.getDate());
-        Toast.makeText(getApplicationContext(),format.format(calView.getDate()) , Toast.LENGTH_SHORT).show();
+
         dateSplit = dateString1.split("/");
 
         currday = dateSplit[0];
@@ -135,7 +135,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
         if(todoTitle.getText().length() > 0) {
 
 
-            String key = database.getReference("users").child(uuid).child("todoList").push().getKey();
+            String key = database.getReference("users").child(uuid).child("todoList").child("Active").push().getKey();
 
 
             if (ukey == null) {
@@ -156,7 +156,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
                 Map<String, Object> childUpdates = new HashMap<>();
                 childUpdates.put(key, todo.toFirebaseObject());
-                database.getReference("users").child(uuid).child("todoList").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
+                database.getReference("users").child(uuid).child("todoList").child("Active").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
 
@@ -189,7 +189,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
                 Map<String, Object> childUpdates = new HashMap<>();
                 childUpdates.put(ukey, todo.toFirebaseObject());
 
-                database.getReference("users").child(uuid).child("todoList").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
+                database.getReference("users").child(uuid).child("todoList").child("Active").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                         if (databaseError == null) {

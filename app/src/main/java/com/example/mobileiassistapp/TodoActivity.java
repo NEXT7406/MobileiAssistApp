@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -31,6 +32,7 @@ public class TodoActivity extends AppCompatActivity {
     String uuid;
     LinearLayoutManager llm;
     FirebaseDatabase database;
+    Button historyBtn;
 
 
 
@@ -47,6 +49,15 @@ public class TodoActivity extends AppCompatActivity {
         btnAdd = (Button)findViewById(R.id.addBtn);
         recyclerView = (RecyclerView)findViewById((R.id.recyclerView));
         database = FirebaseDatabase.getInstance();
+        historyBtn =(Button)findViewById(R.id.todohistoryBtn);
+
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newIntent = new Intent(TodoActivity.this,ToDoHistoryActivity.class);
+                TodoActivity.this.startActivity(newIntent);
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +85,7 @@ public class TodoActivity extends AppCompatActivity {
         super.onResume();
 
 
-        database.getReference("users").child(uuid).child("todoList").addListenerForSingleValueEvent(
+        database.getReference("users").child(uuid).child("todoList").child("Active").addListenerForSingleValueEvent(
 
                 new ValueEventListener() {
                     @Override
@@ -139,13 +150,28 @@ public class TodoActivity extends AppCompatActivity {
                 title = (TextView) itemView.findViewById(R.id.itemTitle);
                 deleteBtn = (Button)itemView.findViewById(R.id.deleteBtn);
 
+                deleteBtn.setText("Complete");
+
                 deleteBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Todo todo = todoList.get(position);
-                        database.getReference("users").child(uuid).child("todoList").child(todo.getID()).removeValue();
+
+                        DatabaseReference DR = FirebaseDatabase.getInstance().getReference("users").child(uuid).child("todoList").child("History").child(todo.getID());
+                        DR.child("id").setValue(todo.getID());
+                        DR.child("date").setValue(todo.getDate());
+                        DR.child("message").setValue(todo.getMessage());
+                        DR.child("name").setValue(todo.getName());
+
+
+                        database.getReference("users").child(uuid).child("todoList").child("Active").child(todo.getID()).removeValue();
+
                         onResume();
-                        Toast.makeText(getApplicationContext(), "Removed : "+todo.getName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Completed : "+todo.getName(), Toast.LENGTH_SHORT).show();
+
+
+
+
                     }
                 });
 
