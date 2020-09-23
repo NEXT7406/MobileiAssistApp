@@ -88,7 +88,7 @@
                 android:gravity="center"
                 android:hint="@string/input_placeholder"
                 android:inputType="number"
-                android:textColor="#feb63d" />
+                android:textColor="#131312" />
 
         </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:gravity="center"
                 android:hint="@string/input_placeholder"
                 android:inputType="number"
-                android:textColor="#feb63d" />
+                android:textColor="#131312" />
 
         </LinearLayout>
 
@@ -142,7 +142,7 @@
                 android:gravity="center"
                 android:hint="@string/input_placeholder"
                 android:inputType="number"
-                android:textColor="#feb63d" />
+                android:textColor="#131312" />
 
         </LinearLayout>
 

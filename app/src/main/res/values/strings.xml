@@ -16,7 +16,7 @@
     <string name="btn_save">SAVE</string>
 
     <string name="page_name3">Save your Data</string>
-    <string name="file_name">File name :-</string>
+    <string name="subject_name">Subject name :-</string>
     <string name="id">Id :-</string>
     <string name="btn_add">ADD DATA</string>
     <string name="btn_update">UPDATE</string>
