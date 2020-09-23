@@ -8,6 +8,7 @@
     <string name="mid_marks">Mid marks:- </string>
     <string name="final_marks">Final marks:- </string>
     <string name="btn_cal">Calculate</string>
+    <string name="input_placeholder">out of 100</string> // place holder for input fields - MarkingActivity.java
 
     <string name="page_name2">Your marks</string>
     <string name="ca_marks">CA marks :-</string>
