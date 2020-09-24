@@ -35,5 +35,7 @@
 
     <string name="msg9_gpa">Your GPA is</string>
     <string name="msg10_gpa">Save my GPA</string>
+    <string name="msg11_gpa">Title</string>
+    <string name="msg12_gpa">GPA</string>
 
 </resources>
