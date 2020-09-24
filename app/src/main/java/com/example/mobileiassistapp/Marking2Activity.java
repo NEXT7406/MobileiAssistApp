@@ -3,7 +3,6 @@ package com.example.mobileiassistapp;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -22,14 +21,19 @@ public class Marking2Activity extends AppCompatActivity {
     EditText subject_id;
     EditText subject_name;
     EditText sub_id_to_delete;
-    DatabaseHelper myDb;
+    EditText sub_id_to_update;
+    EditText sub_name_to_update;
+    EditText ca_to_update;
+    EditText total_to_update;
+    Button update_btn;
+    DatabaseHelperMarking myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.marking2activity);
         Bundle bundle = getIntent().getExtras();
 
-        myDb = new DatabaseHelper(this);
+        myDb = new DatabaseHelperMarking(this);
 
         btn_save = (Button) findViewById(R.id.btn_save);
         btn_view_all = (Button) findViewById(R.id.view_all_btn);
@@ -39,6 +43,12 @@ public class Marking2Activity extends AppCompatActivity {
         total = (TextView) findViewById(R.id.total_text_id);
         subject_id = (EditText) findViewById(R.id.subject_id);
         subject_name = (EditText) findViewById(R.id.subject_name);
+
+        sub_id_to_update = (EditText) findViewById(R.id.sub_id_to_update);
+        sub_name_to_update = (EditText)findViewById(R.id.sub_name_to_update);
+        ca_to_update = (EditText)findViewById(R.id.ca_to_update);
+        total_to_update = (EditText)findViewById(R.id.total_to_update);
+        update_btn = (Button)findViewById(R.id.update_btn);
 
         float ca_marks = bundle.getFloat("ca");
         float final_marks = bundle.getFloat("final");
@@ -55,6 +65,7 @@ public class Marking2Activity extends AppCompatActivity {
         AddData();
         viewAll();
         deleteData();
+        updateData();
     }
 
     public void AddData(){
@@ -124,6 +135,22 @@ public class Marking2Activity extends AppCompatActivity {
                             Toast.makeText(Marking2Activity.this,"Data Deleted",Toast.LENGTH_LONG).show();
                         }else{
                             Toast.makeText(Marking2Activity.this,"Data Not Deleted",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+    }
+
+    public void updateData(){
+        update_btn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isUpdated = myDb.updateData(sub_id_to_update.getText().toString(),sub_name_to_update.getText().toString(),Float.parseFloat(ca_to_update.getText().toString()),Float.parseFloat(total_to_update.getText().toString()));
+                        if(isUpdated){
+                            Toast.makeText(Marking2Activity.this,"Data Updated",Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(Marking2Activity.this,"Data Not Updated",Toast.LENGTH_LONG).show();
                         }
                     }
                 }

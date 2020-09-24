@@ -9,7 +9,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelperMarking extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Mad.db";
     public static final String TABLE_NAME = "subject_table";
     public static final String COL_1 = "ID";
@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "CA_MARKS";
     public static final String COL_5 = "TOTAL_MARKS";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelperMarking(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -57,5 +57,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Integer deleteData(String subject_id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME,"SUBJECT_ID = ?",new String [] {subject_id});
+    }
+
+    public Boolean updateData(String sub_id,String sub_name,Float ca_new,Float total_new){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2,sub_id);
+        contentValues.put(COL_3,sub_name);
+        contentValues.put(COL_4,ca_new);
+        contentValues.put(COL_5,total_new);
+        db.update(TABLE_NAME,contentValues,"SUBJECT_ID = ?",new String[]{sub_id});
+        return true;
     }
 }
