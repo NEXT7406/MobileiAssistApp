@@ -20,12 +20,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnlogin;
-    EditText emailtxt;
-    EditText passtxt;
+    Button btnLogin;
+    EditText emailTxt;
+    EditText passTxt;
     ProgressBar loading;
-    Button btnforgot;
-    Button btnsign;
+    Button btnForgot;
+    Button btnSign;
 
 
     private FirebaseAuth mAuth;
@@ -39,17 +39,17 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        emailtxt = (EditText) findViewById(R.id.emailtxt1);
-        passtxt = (EditText) findViewById(R.id.passtxt);
+        emailTxt = (EditText) findViewById(R.id.emaitxtlogin);
+        passTxt = (EditText) findViewById(R.id.passtxt);
         loading = (ProgressBar) findViewById(R.id.progressBarLog);
-        btnlogin = (Button) findViewById(R.id.loginbtn1);
-        btnforgot = (Button) findViewById(R.id.forgotbtn);
-        btnsign = (Button) findViewById(R.id.signbtn);
+        btnLogin = (Button) findViewById(R.id.loginbtn1);
+        btnForgot = (Button) findViewById(R.id.forgotbtn);
+        btnSign = (Button) findViewById(R.id.signbtn);
 
         loading.setIndeterminate(false);
         loading.setVisibility(View.INVISIBLE);
 
-        btnforgot.setOnClickListener(new View.OnClickListener() {
+        btnForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, ForgetPwActivity.class);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnsign.setOnClickListener(new View.OnClickListener() {
+        btnSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainActivity.this, SignUpActivity.class);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Login();
@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         loading.setIndeterminate(true);
 
         String email,password;
-        email= emailtxt.getText().toString();
-        password = passtxt.getText().toString();
+        email= emailTxt.getText().toString();
+        password = passTxt.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();

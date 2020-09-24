@@ -26,7 +26,7 @@ import java.util.Map;
 public class ToDoSaveActivity extends AppCompatActivity {
 
     String uuid;
-    String ukey =null;
+    String uKey =null;
     EditText todoTitle;
     EditText todoMsg;
     Button saveBtn;
@@ -34,9 +34,9 @@ public class ToDoSaveActivity extends AppCompatActivity {
     CalendarView calView;
     SimpleDateFormat format;
     TextView titleSave;
-    String currday;
-    String curryear;
-    String currmonth;
+    String currDay;
+    String currYear;
+    String currMonth;
 
     String[] dateSplit;
 
@@ -65,9 +65,9 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
         dateSplit = dateString1.split("/");
 
-        currday = dateSplit[0];
-        currmonth = dateSplit[1];
-        curryear = dateSplit[2];
+        currDay = dateSplit[0];
+        currMonth = dateSplit[1];
+        currYear = dateSplit[2];
 
 
 
@@ -79,10 +79,10 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
                 todoTitle.setText(todo.getName());
                 todoMsg.setText(todo.getMessage());
-                ukey = todo.getID();
+                uKey = todo.getID();
 
                 saveBtn.setText("Update To-do");
-                titleSave.setText("Update To-do");
+                titleSave.setText("UPDATE TO DO");
 
 
 
@@ -99,9 +99,9 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
                     String[] dateSplit = todo.getDate().split("/");
 
-                    currday = dateSplit[0];
-                    currmonth = dateSplit[1];
-                    curryear = dateSplit[2];
+                    currDay = dateSplit[0];
+                    currMonth = dateSplit[1];
+                    currYear = dateSplit[2];
 
 
                 } catch (ParseException e) {
@@ -114,9 +114,9 @@ public class ToDoSaveActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
 
-                currday = String.valueOf(i2);
-                curryear = String.valueOf(i);
-                currmonth = String.valueOf(i1+1);
+                currDay = String.valueOf(i2);
+                currYear = String.valueOf(i);
+                currMonth = String.valueOf(i1+1);
 
 
 
@@ -138,13 +138,13 @@ public class ToDoSaveActivity extends AppCompatActivity {
             String key = database.getReference("users").child(uuid).child("todoList").child("Active").push().getKey();
 
 
-            if (ukey == null) {
+            if (uKey == null) {
 
 
 
                // SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-                String dateString = currday+"/"+currmonth+"/"+curryear;
+                String dateString = currDay+"/"+currMonth+"/"+currYear;
 
                 Todo todo = new Todo();
                 todo.setName(todoTitle.getText().toString());
@@ -172,13 +172,13 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
              //  SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-                String dateString = currday+"/"+currmonth+"/"+curryear;
+                String dateString = currDay+"/"+currMonth+"/"+currYear;
 
                 Todo todo = new Todo();
                 todo.setName(todoTitle.getText().toString());
                 todo.setMessage(todoMsg.getText().toString());
                 todo.setDate(dateString);
-                todo.setID(ukey);
+                todo.setID(uKey);
 
 
                 Intent intent = new Intent();
@@ -187,7 +187,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
 
                 Map<String, Object> childUpdates = new HashMap<>();
-                childUpdates.put(ukey, todo.toFirebaseObject());
+                childUpdates.put(uKey, todo.toFirebaseObject());
 
                 database.getReference("users").child(uuid).child("todoList").child("Active").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
                     @Override

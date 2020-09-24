@@ -15,8 +15,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgetPwActivity extends AppCompatActivity {
 
-    Button resetbtn;
-    EditText emailres;
+    Button resetBtn;
+    EditText emailRes;
 
 
 
@@ -24,14 +24,14 @@ public class ForgetPwActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_pw);
-        resetbtn =(Button)findViewById(R.id.resetbtn);
-        emailres = (EditText)findViewById(R.id.resettxt) ;
-        resetbtn.setOnClickListener(new View.OnClickListener() {
+        resetBtn =(Button)findViewById(R.id.resetbtn);
+        emailRes = (EditText)findViewById(R.id.resettxt) ;
+        resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                FirebaseAuth.getInstance().sendPasswordResetEmail(emailres.getText().toString())
+                FirebaseAuth.getInstance().sendPasswordResetEmail(emailRes.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {

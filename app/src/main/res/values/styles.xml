@@ -7,4 +7,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Button.black" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/colorBtn</item>
+    </style>
+
+    <style name="Button.yellow" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/colorBtnTxt</item>
+    </style>
+
 </resources>

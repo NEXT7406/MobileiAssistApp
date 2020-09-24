@@ -20,12 +20,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
-    EditText emailtxt;
-    EditText passwordtxt;
-    EditText passwordre;
-    Button Signbtn;
+    EditText emailTxt;
+    EditText passwordTxt;
+    EditText passwordRe;
+    Button SignBtn;
 
-    ProgressBar loadsign;
+    ProgressBar loadSign;
 
     private FirebaseAuth mAuth;
 
@@ -37,17 +37,17 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        emailtxt=(EditText)findViewById(R.id.emailsign);
-        passwordtxt = (EditText)findViewById(R.id.passwordsign);
-        passwordre = (EditText)findViewById(R.id.passresign);
-       loadsign = (ProgressBar)findViewById(R.id.progressBarSign);
-       loadsign.setIndeterminate(false);
-       loadsign.setVisibility(View.INVISIBLE);
+        emailTxt=(EditText)findViewById(R.id.emailsign);
+        passwordTxt = (EditText)findViewById(R.id.passwordsign);
+        passwordRe = (EditText)findViewById(R.id.passresign);
+       loadSign = (ProgressBar)findViewById(R.id.progressBarSign);
+       loadSign.setIndeterminate(false);
+       loadSign.setVisibility(View.INVISIBLE);
         mAuth = FirebaseAuth.getInstance();
 
-        Signbtn = (Button)findViewById(R.id.signupbtn);
+        SignBtn = (Button)findViewById(R.id.signupbtn);
 
-        Signbtn.setOnClickListener(new View.OnClickListener() {
+        SignBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -60,26 +60,26 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void SignUp(){
 
-        loadsign.setVisibility(View.VISIBLE);
-        loadsign.setIndeterminate(true);
+        loadSign.setVisibility(View.VISIBLE);
+        loadSign.setIndeterminate(true);
         String email, password;
-        email = emailtxt.getText().toString();
-        password = passwordtxt.getText().toString();
+        email = emailTxt.getText().toString();
+        password = passwordTxt.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
-          loadsign.setIndeterminate(false);
-          loadsign.setVisibility(View.INVISIBLE);
+          loadSign.setIndeterminate(false);
+          loadSign.setVisibility(View.INVISIBLE);
             return;
         }
         if (TextUtils.isEmpty(password)) {
             Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
-           loadsign.setIndeterminate(false);
-           loadsign.setVisibility(View.INVISIBLE);
+           loadSign.setIndeterminate(false);
+           loadSign.setVisibility(View.INVISIBLE);
             return;
         }
 
-        if(passwordre.getText().toString().equals(passwordtxt.getText().toString())) {
+        if(passwordRe.getText().toString().equals(passwordTxt.getText().toString())) {
 
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -90,8 +90,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 sendVerificationEmail();
                             } else {
                                 Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();
-                               loadsign.setIndeterminate(false);
-                                loadsign.setVisibility(View.INVISIBLE);
+                               loadSign.setIndeterminate(false);
+                                loadSign.setVisibility(View.INVISIBLE);
 
                             }
                         }
@@ -99,8 +99,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         }else{
             Toast.makeText(getApplicationContext(), "Entered Passwords Does Not Match", Toast.LENGTH_LONG).show();
-            loadsign.setIndeterminate(false);
-            loadsign.setVisibility(View.INVISIBLE);
+            loadSign.setIndeterminate(false);
+            loadSign.setVisibility(View.INVISIBLE);
         }
 
 
@@ -129,9 +129,9 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             // email sent
-                            loadsign.setIndeterminate(false);
+                            loadSign.setIndeterminate(false);
                             Toast.makeText(getApplicationContext(), "Registration successful! verify your email", Toast.LENGTH_LONG).show();
-                            loadsign.setVisibility(View.INVISIBLE);
+                            loadSign.setVisibility(View.INVISIBLE);
 
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(intent);

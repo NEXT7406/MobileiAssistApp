@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-    Button btngpa;
-    Button btntarget;
-    Button btnmarking;
-    Button btntodo;
+    Button btnGpa;
+    Button btnTarget;
+    Button btnMarking;
+    Button btnTodo;
+    Button btnAbout;
 
 
 
@@ -20,12 +21,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btngpa = (Button)findViewById(R.id.gpabtn);
-        btntarget=(Button)findViewById(R.id.targetbtn);
-        btnmarking=(Button)findViewById(R.id.markingbtn);
-        btntodo =(Button)findViewById(R.id.todobtn);
+        btnGpa = (Button)findViewById(R.id.gpabtn);
+        btnTarget=(Button)findViewById(R.id.targetbtn);
+        btnMarking=(Button)findViewById(R.id.markingbtn);
+        btnTodo =(Button)findViewById(R.id.todobtn);
+        btnAbout=(Button)findViewById(R.id.Aboutbtn);
 
-        btngpa.setOnClickListener(new View.OnClickListener() {
+        btnGpa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -34,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-        btntarget.setOnClickListener(new View.OnClickListener() {
+        btnTarget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -43,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-        btnmarking.setOnClickListener(new View.OnClickListener() {
+        btnMarking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -52,11 +54,20 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-        btntodo.setOnClickListener(new View.OnClickListener() {
+        btnTodo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent myIntent = new Intent(HomeActivity.this, TodoActivity.class);
+                HomeActivity.this.startActivity(myIntent);
+
+            }
+        });
+
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(HomeActivity.this, AboutActivity.class);
                 HomeActivity.this.startActivity(myIntent);
 
             }
