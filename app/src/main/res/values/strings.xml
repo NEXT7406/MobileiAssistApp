@@ -9,7 +9,7 @@
     <string name="final_marks">Final marks:- </string>
     <string name="btn_cal">Calculate</string>
     <string name="input_placeholder">out of 100</string>
-    // place holder for input fields - MarkingActivity.java
+    // place holder for input fields - activity_marking.xml
 
     <string name="page_name2">Your marks</string>
     <string name="ca_marks">CA marks</string>
@@ -23,6 +23,12 @@
     <string name="btn_update">UPDATE</string>
     <string name="btn_delete">DELETE</string>
     <string name="btn_view">VIEW ALL</string>
+
+    //hint activity_marking3.xml
+    <string name="hint_id">ID</string>
+    <string name="hint_name">Subject Name</string>
+    <string name="hint_ca">CA</string>
+    <string name="hint_total">Total</string>
 
     <string name="page_name4">Save your Data</string>
     <string name="id2">Id :-</string>
