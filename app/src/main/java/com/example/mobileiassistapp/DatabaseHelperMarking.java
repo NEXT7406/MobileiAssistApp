@@ -54,19 +54,18 @@ public class DatabaseHelperMarking extends SQLiteOpenHelper {
         return res;
     }
 
-    public Integer deleteData(String subject_id){
+    public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME,"SUBJECT_ID = ?",new String [] {subject_id});
+        return db.delete(TABLE_NAME,"ID = ?",new String [] {id});
     }
 
-    public Boolean updateData(String sub_id,String sub_name,Float ca_new,Float total_new){
+    public Boolean updateData(String id,String sub_name,Float ca_new,Float total_new){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,sub_id);
         contentValues.put(COL_3,sub_name);
         contentValues.put(COL_4,ca_new);
         contentValues.put(COL_5,total_new);
-        db.update(TABLE_NAME,contentValues,"SUBJECT_ID = ?",new String[]{sub_id});
+        db.update(TABLE_NAME,contentValues,"ID = ?",new String[]{id});
         return true;
     }
 }
