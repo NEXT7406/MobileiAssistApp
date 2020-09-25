@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".historyActivity"></activity>
-        <activity android:name=".historyAvtivity" />
-        <activity android:name=".saveGPAActivity" />
-        <activity android:name=".displayGPAActivity" />
+        <activity android:name=".historyActivity" android:parentActivityName=".saveGPAActivity"></activity>
+
+        <activity android:name=".saveGPAActivity" android:parentActivityName=".displayGPAActivity"/>
+        <activity android:name=".displayGPAActivity" android:parentActivityName=".GpaActivity" />
         <activity android:name=".TodoActivity" />
         <activity android:name=".MarkingActivity" />
         <activity android:name=".TargetActivity" />
-        <activity android:name=".GpaActivity" />
+        <activity android:name=".GpaActivity" android:parentActivityName=".HomeActivity"/>
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
