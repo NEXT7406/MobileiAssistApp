@@ -121,6 +121,7 @@ public class TodoActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
+
             return todoList.size();
         }
 

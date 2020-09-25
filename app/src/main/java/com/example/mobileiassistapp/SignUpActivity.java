@@ -23,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText emailTxt;
     EditText passwordTxt;
     EditText passwordRe;
+
     Button SignBtn;
 
     ProgressBar loadSign;
@@ -62,8 +63,9 @@ public class SignUpActivity extends AppCompatActivity {
 
         loadSign.setVisibility(View.VISIBLE);
         loadSign.setIndeterminate(true);
-        String email, password;
+        String email, password,passRe;
         email = emailTxt.getText().toString();
+        passRe = passwordRe.getText().toString();
         password = passwordTxt.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
@@ -76,6 +78,18 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
            loadSign.setIndeterminate(false);
            loadSign.setVisibility(View.INVISIBLE);
+            return;
+        }
+        if (password.length() < 8) {
+            Toast.makeText(getApplicationContext(), "Password must be at least 8 characters long", Toast.LENGTH_LONG).show();
+            loadSign.setIndeterminate(false);
+            loadSign.setVisibility(View.INVISIBLE);
+            return;
+        }
+        if (passRe.length() < 8) {
+            Toast.makeText(getApplicationContext(), "Re-entered password must be at least 8 characters long", Toast.LENGTH_LONG).show();
+            loadSign.setIndeterminate(false);
+            loadSign.setVisibility(View.INVISIBLE);
             return;
         }
 
@@ -136,16 +150,16 @@ public class SignUpActivity extends AppCompatActivity {
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(intent);
 
-                            // after email is sent just logout the user and finish this activity
+
                             FirebaseAuth.getInstance().signOut();
 
                             finish();
                         }
                         else
                         {
-                            // email not sent, so display message and restart the activity or do whatever you wish to do
+
                             Toast.makeText(getApplicationContext(), "Registration not successful. try again", Toast.LENGTH_LONG).show();
-                            // restart this activity
+
                             overridePendingTransition(0, 0);
                             finish();
                             overridePendingTransition(0, 0);

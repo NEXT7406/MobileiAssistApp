@@ -36,7 +36,7 @@ public class ForgetPwActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    // Log.d(TAG, "Email sent.");
+
                                     Toast.makeText(ForgetPwActivity.this,
                                             "Email sent", Toast.LENGTH_SHORT).show();
                                 }

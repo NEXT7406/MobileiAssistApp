@@ -159,17 +159,17 @@ public class ToDoHistoryActivity extends AppCompatActivity {
 
         public final class SimpleItemViewHolder extends RecyclerView.ViewHolder {
             TextView title;
-            Button deletebtn;
+            Button deleteBtn;
 
             public int position;
 
             public SimpleItemViewHolder(View itemView) {
                 super(itemView);
                 title = (TextView) itemView.findViewById(R.id.itemTitle);
-                deletebtn = (Button)itemView.findViewById(R.id.deleteBtn);
+                deleteBtn = (Button)itemView.findViewById(R.id.deleteBtn);
 
 
-                deletebtn.setOnClickListener(new View.OnClickListener() {
+                deleteBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         final Todo todo = todoList.get(position);

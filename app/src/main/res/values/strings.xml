@@ -8,9 +8,7 @@
     <string name="todo_history_title">TO DO HISTORY</string>
     <string name="about_title">ABOUT APP</string>
     <string name="about_facebook_btn">Like us on Facebook </string>
-    <string name="about_content">GPA means Grade Point Average. The GPA is a system of judging a student’s performance and it followed throughout the world.If a student seeking admission to graduate studies has grades in a different system he or she should clearly mention that GPA system does not exist and provide details on the system. In the event of a system different from the usual GPA system, some universities may ask for a detailed method of evaluation of the scores with their scales</string>
-    <string name="about_content2">In such case consult the Registrar or controller of examination of the University for an official evaluation to be included along with the transcripts. It is recommended to send your rank certification or official average score of class/ toppers grades etc..to ease the difference between GPA and your system.GPA is one of the most important factors to get admission in a good college.
-                                  Each course is given a certain number of “units” or “credits”, depending on the content of the course. In secondary school, most course carry the same number of units, but this is not true at the college level.</string>
+    <string name="about_content">Mobilei Assist is an app created for help university students to manage their studies.This app contains various tools to help students to calculate and keep track on their tasks with ease.Main features of this app are GPA marks calculation, Target management, Marking management and Student todo list.New users can use these features just by creating an new account in our app.</string>
 
 
     <string name="todo_add_new">Add New To Do</string>

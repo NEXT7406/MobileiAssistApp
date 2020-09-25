@@ -170,7 +170,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
 
             {
 
-             //  SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+           
 
                 String dateString = currDay+"/"+currMonth+"/"+currYear;
 

@@ -96,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
           loading.setVisibility(View.INVISIBLE);
             return;
         }
+        if (password.length() < 8) {
+            Toast.makeText(getApplicationContext(), "Password must be at least 8 characters long", Toast.LENGTH_LONG).show();
+            loading.setIndeterminate(false);
+            loading.setVisibility(View.INVISIBLE);
+            return;
+        }
 
 
         mAuth.signInWithEmailAndPassword(email, password)
