@@ -101,8 +101,8 @@ public class Marking3Activity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdated = myDb.updateData(id_to_update.getText().toString(),sub_name_to_update.getText().toString(),Float.parseFloat(ca_to_update.getText().toString()),Float.parseFloat(total_to_update.getText().toString()));
-                        if(isUpdated){
+                        Integer updatedRows = myDb.updateData(id_to_update.getText().toString(),sub_name_to_update.getText().toString(),Float.parseFloat(ca_to_update.getText().toString()),Float.parseFloat(total_to_update.getText().toString()));
+                        if(updatedRows>0){
                             Toast.makeText(Marking3Activity.this,"Data Updated",Toast.LENGTH_LONG).show();
                         }else{
                             Toast.makeText(Marking3Activity.this,"Data Not Updated",Toast.LENGTH_LONG).show();
