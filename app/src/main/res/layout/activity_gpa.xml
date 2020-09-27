@@ -220,34 +220,34 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
+        android:layout_width="326dp"
+        android:layout_height="43dp"
         android:background="#050505"
         android:fontFamily="sans-serif-black"
-        android:text="HOME"
+        android:text="@string/home"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.681" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="137dp"
-        android:layout_height="45dp"
+        android:layout_width="326dp"
+        android:layout_height="43dp"
         android:background="#090909"
         android:fontFamily="sans-serif-black"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner8"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintVertical_bias="0.301" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

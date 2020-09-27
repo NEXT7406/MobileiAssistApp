@@ -37,5 +37,13 @@
     <string name="msg10_gpa">Save my GPA</string>
     <string name="msg11_gpa">Title</string>
     <string name="msg12_gpa">GPA</string>
+    <string name="calculate">Calculate</string>
+    <string name="home">Home</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="show">Show</string>
+    <string name="entertitle">Enter title</string>
+    <string name="entergpa">Enter your GPA</string>
 
 </resources>

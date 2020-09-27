@@ -16,10 +16,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.069" />
 
     <Button
         android:id="@+id/button5"
@@ -28,21 +28,22 @@
         android:layout_marginBottom="224dp"
         android:background="#040404"
         android:fontFamily="sans-serif-black"
-        android:text="SAVE"
+        android:text="@string/save"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editGPA"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <EditText
         android:id="@+id/editTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/entertitle"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +60,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/editTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446" />
 
     <TextView
         android:id="@+id/textView14"
@@ -70,20 +72,21 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.528" />
 
     <EditText
         android:id="@+id/editGPA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/entergpa"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.683"
+        app:layout_constraintHorizontal_bias="0.691"
         app:layout_constraintStart_toEndOf="@+id/textView14" />
 
     <Button
@@ -93,7 +96,7 @@
         android:layout_marginTop="8dp"
         android:background="#090909"
         android:fontFamily="sans-serif-black"
-        android:text="Update"
+        android:text="@string/update"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +110,7 @@
         android:layout_height="43dp"
         android:background="#0B0A0A"
         android:fontFamily="sans-serif-black"
-        android:text="DELETE"
+        android:text="@string/delete"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,7 +126,7 @@
         android:layout_height="43dp"
         android:background="#090909"
         android:fontFamily="sans-serif-black"
-        android:text="show"
+        android:text="@string/show"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +134,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button7"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <Button
         android:id="@+id/button10"
@@ -139,7 +142,7 @@
         android:layout_height="43dp"
         android:background="#070707"
         android:fontFamily="sans-serif-black"
-        android:text="HOME"
+        android:text="@string/home"
         android:textColor="#FEC63D"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -147,6 +150,6 @@
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.265" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
