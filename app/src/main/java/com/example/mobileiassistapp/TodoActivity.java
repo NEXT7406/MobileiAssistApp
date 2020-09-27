@@ -71,7 +71,7 @@ public class TodoActivity extends AppCompatActivity {
 
 
 
-                    todoTargetBtn.setText("reset target calculation");
+                    todoTargetBtn.setText("reset task calculation");
                     isTargetActivity =1;
                     todoListSize = todoList.size();
                     percentage = 100 / todoListSize;
@@ -159,7 +159,7 @@ public class TodoActivity extends AppCompatActivity {
 
       public void resetCalculation(){
 
-          todoTargetBtn.setText("start target calculation");
+          todoTargetBtn.setText("start task calculation");
           todoTargetPercentage.setText("TODO");
           isTargetActivity =0;
 
