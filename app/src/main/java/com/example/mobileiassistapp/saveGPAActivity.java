@@ -33,8 +33,12 @@ public class saveGPAActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_g_p_a);
 
+        //Edit text - txt1 for title and txt2 for gpa
+
         txt1=findViewById(R.id.editTitle);
         txt2=findViewById(R.id.editGPA);
+
+        //buttons
 
         save=findViewById(R.id.button5);
         update=findViewById(R.id.button6);
@@ -42,20 +46,31 @@ public class saveGPAActivity extends AppCompatActivity {
         show=findViewById(R.id.button9);
         home=findViewById(R.id.button10);
 
+        //object in saveGPA java class
+
         gpa=new SaveGpa();
+
+        //Reference to the firebase
+
         dbRef=FirebaseDatabase.getInstance().getReference().child("savegpa");
 
 
+
+        //on click to the save button
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
+                    // checking whether the fields ate empty - Validation
+
                     if (TextUtils.isEmpty(txt1.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Empty title", Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(txt2.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Empty gpa", Toast.LENGTH_SHORT).show();
                     else {
+
+                        //If fields are not empty insert the data
 
                         gpa.setTitle(txt1.getText().toString().trim());
                         gpa.setGpa(Double.parseDouble(txt2.getText().toString().trim()));
@@ -65,6 +80,7 @@ public class saveGPAActivity extends AppCompatActivity {
                         clearControl();
                     }
                 } catch (NumberFormatException num) {
+                    //if the gpa is a string value then display an invalid message. -Validation
                     Toast.makeText(getApplicationContext(), "Invalid gpa", Toast.LENGTH_SHORT).show();
 
                 }
@@ -74,14 +90,20 @@ public class saveGPAActivity extends AppCompatActivity {
 
 
 
+        //on Click to the show button
+
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //reference to the firebase
                 dbRef=FirebaseDatabase.getInstance().getReference().child("savegpa/save1");
                 dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChildren()) {
+                            // set values
+
                             txt1.setText(dataSnapshot.child("title").getValue().toString());
                             txt2.setText(dataSnapshot.child("gpa").getValue().toString());
 
@@ -102,6 +124,9 @@ public class saveGPAActivity extends AppCompatActivity {
             }
         });
 
+
+        //on click to the update button
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,6 +141,9 @@ public class saveGPAActivity extends AppCompatActivity {
         });
 
 
+
+        //on click to the delete button
+
     delete.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -127,6 +155,8 @@ public class saveGPAActivity extends AppCompatActivity {
     });
 
 
+
+    //on click to the home button
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +170,7 @@ public class saveGPAActivity extends AppCompatActivity {
 
     }
 
+    //method to clear data
     private void clearControl(){
 
         txt1.setText("");

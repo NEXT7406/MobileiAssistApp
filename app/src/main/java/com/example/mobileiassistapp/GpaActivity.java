@@ -28,11 +28,14 @@ public class GpaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gpa);
 
 
+        //calculate button
       calculate= (Button)findViewById(R.id.button2);
 
+      //on click to the calculate button
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //spinners
                 Spinner credit1 = (Spinner) findViewById(R.id.spinner);
                 Spinner credit2 = (Spinner) findViewById(R.id.spinner2);
                 Spinner credit3 = (Spinner) findViewById(R.id.spinner3);
@@ -43,6 +46,7 @@ public class GpaActivity extends AppCompatActivity {
                 Spinner grade4 = (Spinner) findViewById(R.id.spinner8);
 
 
+                //get selected values from the spinners
                 double c1 = Double.parseDouble(credit1.getSelectedItem().toString());
                 double c2 = Double.parseDouble(credit2.getSelectedItem().toString());
                 double c3 = Double.parseDouble(credit3.getSelectedItem().toString());
@@ -51,6 +55,9 @@ public class GpaActivity extends AppCompatActivity {
                 String g2 = grade2.getSelectedItem().toString();
                 String g3 = grade3.getSelectedItem().toString();
                 String g4 = grade4.getSelectedItem().toString();
+
+                //Conditions
+                //subject 1
 
                 if (g1.equals("A+")) {
                     grad1 = 4.00;
@@ -90,6 +97,8 @@ public class GpaActivity extends AppCompatActivity {
 
 
 
+                    //subject 2
+
                 } if (g2.equals("A+")) {
                     grad2 = 4.00;
 
@@ -128,6 +137,8 @@ public class GpaActivity extends AppCompatActivity {
 
                 }
 
+
+                //subject 3
 
 
                 if (g3.equals("A+")) {
@@ -169,6 +180,8 @@ public class GpaActivity extends AppCompatActivity {
                 }
 
 
+
+                //subject 4
 
                 if (g4.equals("A+")) {
                     grad4 = 4.00;
@@ -289,7 +302,7 @@ public class GpaActivity extends AppCompatActivity {
     }
 
 
-        //navigate to the home page when clicking on home button
+        //method to navigate to the home page when clicking on home button
     public void openHomeActivity() {
         Intent intent1 = new Intent(this, HomeActivity.class);
         startActivity(intent1);

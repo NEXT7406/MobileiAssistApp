@@ -17,14 +17,18 @@ public class displayGPAActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_g_p_a);
 
-
+        //textView
         TextView text=(TextView)findViewById(R.id.textView12);
+
+        //set the value of gpa to textview
         text.setText(getIntent().getStringExtra("gpa"));
 
-
-
-
+        //Button
         home=(Button)findViewById(R.id.button3);
+        save=(Button)findViewById(R.id.button4);
+
+
+        //on click for the home button which navigates to HomeActivity
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +37,7 @@ public class displayGPAActivity extends AppCompatActivity {
         });
 
 
-        save=(Button)findViewById(R.id.button4);
+       //onclick for the save button which navigates to the saveGPAActivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,11 +48,14 @@ public class displayGPAActivity extends AppCompatActivity {
 
 
     }
+
+    //method to call homeActivity
     public void openHomeActivity(){
         Intent intent1=new Intent(this,HomeActivity.class);
         startActivity(intent1);
     }
 
+    //method to call saveGPAActivity
     public void opensaveGPAActivity(){
         Intent intent=new Intent(this,saveGPAActivity.class);
         startActivity(intent);
