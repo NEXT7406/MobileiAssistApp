@@ -202,6 +202,7 @@ public class ToDoSaveActivity extends AppCompatActivity {
             }
         }
         else{
+
             Toast.makeText(getApplicationContext(), "Add To-Do name continue", Toast.LENGTH_SHORT).show();
 
         }

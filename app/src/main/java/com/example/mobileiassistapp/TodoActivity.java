@@ -27,13 +27,23 @@ public class TodoActivity extends AppCompatActivity {
 
     Button btnAdd;
     RecyclerView recyclerView;
+
     ArrayList<Todo> todoList;
     RecycleAdapter recycleAdapter;
     String uuid;
     LinearLayoutManager llm;
     FirebaseDatabase database;
     Button historyBtn;
+    Button todoTargetBtn;
+    TextView todoTargetPercentage;
 
+    int isTargetActivity = 0;
+
+    float todoListSize;
+
+    float percentage;
+
+    float filledperc;
 
 
 
@@ -50,10 +60,40 @@ public class TodoActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById((R.id.recyclerView));
         database = FirebaseDatabase.getInstance();
         historyBtn =(Button)findViewById(R.id.todohistoryBtn);
+        todoTargetBtn = (Button) findViewById(R.id.todoTargetCalbtn);
+        todoTargetPercentage =(TextView)findViewById(R.id.todoTitleView);
+
+        todoTargetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(isTargetActivity==0){
+
+
+
+                    todoTargetBtn.setText("reset target calculation");
+                    isTargetActivity =1;
+                    todoListSize = todoList.size();
+                    percentage = 100 / todoListSize;
+                    filledperc = 0;
+
+                    todoTargetPercentage.setText("TODO "+String.format("%.0f", filledperc) +"% COMPLETED");
+
+                }
+                else if( isTargetActivity == 1){
+
+                  resetCalculation();
+                }
+
+
+            }
+        });
+
 
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetCalculation();
                 Intent newIntent = new Intent(TodoActivity.this,ToDoHistoryActivity.class);
                 TodoActivity.this.startActivity(newIntent);
             }
@@ -62,6 +102,7 @@ public class TodoActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetCalculation();
                 Intent newIntent = new Intent(TodoActivity.this,ToDoSaveActivity.class);
                 TodoActivity.this.startActivity(newIntent);
 
@@ -83,6 +124,8 @@ public class TodoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+
 
 
         database.getReference("users").child(uuid).child("todoList").child("Active").addListenerForSingleValueEvent(
@@ -114,6 +157,15 @@ public class TodoActivity extends AppCompatActivity {
                 });
     }
 
+      public void resetCalculation(){
+
+          todoTargetBtn.setText("start target calculation");
+          todoTargetPercentage.setText("TODO");
+          isTargetActivity =0;
+
+
+      }
+
 
 
     private class RecycleAdapter extends RecyclerView.Adapter {
@@ -130,6 +182,9 @@ public class TodoActivity extends AppCompatActivity {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_todo, parent, false);
             SimpleItemViewHolder ivh = new SimpleItemViewHolder(v);
             return ivh;
+
+
+
         }
 
         @Override
@@ -156,6 +211,11 @@ public class TodoActivity extends AppCompatActivity {
                 deleteBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+
+
+
+
                         Todo todo = todoList.get(position);
 
                         DatabaseReference DR = FirebaseDatabase.getInstance().getReference("users").child(uuid).child("todoList").child("History").child(todo.getID());
@@ -170,7 +230,17 @@ public class TodoActivity extends AppCompatActivity {
                         onResume();
                         Toast.makeText(getApplicationContext(), "Completed : "+todo.getName(), Toast.LENGTH_SHORT).show();
 
+                        if(isTargetActivity == 1){
 
+                            todoListSize = todoList.size();
+                            filledperc = filledperc + percentage;
+                            todoTargetPercentage.setText("TODO "+String.format("%.0f", filledperc) +"% COMPLETED");
+
+
+
+
+
+                        }
 
 
                     }
