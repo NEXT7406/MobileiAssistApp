@@ -74,7 +74,8 @@ public class TodoActivity extends AppCompatActivity {
                     todoTargetBtn.setText("reset task calculation");
                     isTargetActivity =1;
                     todoListSize = todoList.size();
-                    percentage = 100 / todoListSize;
+                    calculatePercentagePerItem(todoListSize);
+
                     filledperc = 0;
 
                     todoTargetPercentage.setText("TODO "+String.format("%.0f", filledperc) +"% COMPLETED");
@@ -119,6 +120,13 @@ public class TodoActivity extends AppCompatActivity {
         recycleAdapter.notifyDataSetChanged();
 
 
+
+    }
+
+    public float calculatePercentagePerItem(float todoListSize)
+    {
+        percentage = 100/todoListSize;
+        return percentage;
     }
 
     @Override
