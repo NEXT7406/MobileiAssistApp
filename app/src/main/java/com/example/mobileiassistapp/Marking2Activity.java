@@ -41,7 +41,7 @@ public class Marking2Activity extends AppCompatActivity {
         float ca_marks = bundle.getFloat("ca");
         float final_marks = bundle.getFloat("final");
         ca.setText(String.format("%.2f",ca_marks));
-        total.setText(String.format("%.2f",(final_marks+ca_marks)));
+        total.setText(String.format("%.2f",calculateTotal(final_marks,ca_marks)));
         AddData();
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +67,10 @@ public class Marking2Activity extends AppCompatActivity {
                     }
                 }
         );
+    }
+
+    public float calculateTotal(float final_marks, float ca){
+        float total = final_marks+ca;
+        return total;
     }
 }
