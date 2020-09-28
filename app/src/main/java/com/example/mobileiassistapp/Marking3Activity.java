@@ -42,6 +42,24 @@ public class Marking3Activity extends AppCompatActivity {
         viewAll();
         deleteData();
         updateData();
+
+        ca_to_update.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(ca_to_update.getText().toString())>50){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 50", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        total_to_update.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(total_to_update.getText().toString())>100){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void viewAll(){

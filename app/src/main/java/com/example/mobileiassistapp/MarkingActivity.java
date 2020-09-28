@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MarkingActivity extends AppCompatActivity {
 
@@ -37,6 +40,42 @@ public class MarkingActivity extends AppCompatActivity {
                 intent.putExtra("final",FinalMarks);
                 startActivity(intent);
 
+            }
+        });
+
+        assg1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(assg1.getText().toString())>100){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        assg2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(assg2.getText().toString())>100){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        mid.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(mid.getText().toString())>100){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        finalExam.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus && Float.parseFloat(finalExam.getText().toString())>100){
+                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
