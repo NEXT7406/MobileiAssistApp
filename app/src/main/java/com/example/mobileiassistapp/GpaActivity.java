@@ -40,6 +40,10 @@ public class GpaActivity extends AppCompatActivity {
                calGPA(Double.parseDouble(credit1.getSelectedItem().toString()),Double.parseDouble(credit2.getSelectedItem().toString()),Double.parseDouble(credit3.getSelectedItem().toString()),
                        Double.parseDouble(credit4.getSelectedItem().toString()),grade1.getSelectedItem().toString(),grade2.getSelectedItem().toString(),
                        grade3.getSelectedItem().toString(),grade4.getSelectedItem().toString());
+                //pass data to the displayGPAActivity
+                Intent intent=new Intent(GpaActivity.this,displayGPAActivity.class);
+                intent.putExtra("gpa",String.valueOf(gpa));
+                startActivity(intent);
 
 
             }
@@ -277,18 +281,11 @@ public class GpaActivity extends AppCompatActivity {
                 }
 
 
-
-
-
                 //calculations
                 tot_credit = c1 + c2 + c3 + c4;
                 tot_grade = (grad1 * c1) + (grad2 * c2) + (grad3 * c3) + (grad4 * c4);
                 gpa = (tot_grade / tot_credit);
 
-                //pass data to the displayGPAActivity
-                Intent intent=new Intent(GpaActivity.this,displayGPAActivity.class);
-                intent.putExtra("gpa",String.valueOf(gpa));
-                startActivity(intent);
         return gpa;
     }
 
