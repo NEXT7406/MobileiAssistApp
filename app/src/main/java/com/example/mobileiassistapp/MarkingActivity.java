@@ -33,7 +33,8 @@ public class MarkingActivity extends AppCompatActivity {
         btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float CAMarks = calculateCAMarks(Float.parseFloat(assg1.getText().toString()),Float.parseFloat(assg2.getText().toString()),Float.parseFloat(mid.getText().toString()));
+                float CAMarks = calculateCAMarks(Float.parseFloat(assg1.getText().toString()),
+                        Float.parseFloat(assg2.getText().toString()),Float.parseFloat(mid.getText().toString()));
                 float FinalMarks = calculateFinalMarks(Float.parseFloat(finalExam.getText().toString()));
                 Intent intent = new Intent(MarkingActivity.this, Marking2Activity.class);
                 intent.putExtra("ca",CAMarks);
@@ -106,4 +107,5 @@ public class MarkingActivity extends AppCompatActivity {
         float finalMarks = finalExamMarks*50/100;
         return finalMarks;
     }
+
 }

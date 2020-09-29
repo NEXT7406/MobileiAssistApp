@@ -58,7 +58,8 @@ public class Marking2Activity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                    boolean isInserted =  myDb.insertData(subject_id.getText().toString(),subject_name.getText().toString(),Float.parseFloat(ca.getText().toString()),Float.parseFloat(total.getText().toString()));
+                    boolean isInserted =  myDb.insertData(subject_id.getText().toString(),subject_name.getText().toString(),
+                            Float.parseFloat(ca.getText().toString()),Float.parseFloat(total.getText().toString()));
                     if(isInserted == true){
                         Toast.makeText(Marking2Activity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                     }else{
