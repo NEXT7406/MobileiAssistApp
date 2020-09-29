@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,17 +47,26 @@ public class Marking3Activity extends AppCompatActivity {
         ca_to_update.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(ca_to_update.getText().toString())>50){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 50", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(ca_to_update.getText().toString())){
+                    if(!hasFocus && Float.parseFloat(ca_to_update.getText().toString())>50){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 50", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
         total_to_update.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(total_to_update.getText().toString())>100){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty((total_to_update.getText().toString()))){
+                    if(!hasFocus && Float.parseFloat(total_to_update.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
             }
         });

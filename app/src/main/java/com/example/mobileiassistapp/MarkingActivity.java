@@ -46,8 +46,12 @@ public class MarkingActivity extends AppCompatActivity {
         assg1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(assg1.getText().toString())>100){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(assg1.getText().toString())){
+                    if(!hasFocus && Float.parseFloat(assg1.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -55,17 +59,26 @@ public class MarkingActivity extends AppCompatActivity {
         assg2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(assg2.getText().toString())>100){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(assg2.getText().toString())){
+                    if(!hasFocus && Float.parseFloat(assg2.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
         mid.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(mid.getText().toString())>100){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(mid.getText().toString())){
+                    if(!hasFocus && Float.parseFloat(mid.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -73,8 +86,12 @@ public class MarkingActivity extends AppCompatActivity {
         finalExam.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus && Float.parseFloat(finalExam.getText().toString())>100){
-                    Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(finalExam.getText().toString())){
+                    if(!hasFocus && Float.parseFloat(finalExam.getText().toString())>100){
+                        Toast.makeText(getApplicationContext(), "Marks should be less than 100", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Marks can not be empty", Toast.LENGTH_LONG).show();
                 }
             }
         });
