@@ -12,15 +12,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class GpaActivity extends AppCompatActivity {
-
-
     Button calculate;
     Button home;
 
-
     double  tot_credit, tot_grade, gpa, grad1, grad2, grad3, grad4;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,205 +30,9 @@ public class GpaActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //spinners
-                Spinner credit1 = (Spinner) findViewById(R.id.spinner);
-                Spinner credit2 = (Spinner) findViewById(R.id.spinner2);
-                Spinner credit3 = (Spinner) findViewById(R.id.spinner3);
-                Spinner credit4 = (Spinner) findViewById(R.id.spinner4);
-                Spinner grade1 = (Spinner) findViewById(R.id.spinner5);
-                Spinner grade2 = (Spinner) findViewById(R.id.spinner6);
-                Spinner grade3 = (Spinner) findViewById(R.id.spinner7);
-                Spinner grade4 = (Spinner) findViewById(R.id.spinner8);
 
+                calGPA();
 
-                //get selected values from the spinners
-                double c1 = Double.parseDouble(credit1.getSelectedItem().toString());
-                double c2 = Double.parseDouble(credit2.getSelectedItem().toString());
-                double c3 = Double.parseDouble(credit3.getSelectedItem().toString());
-                double c4 = Double.parseDouble(credit4.getSelectedItem().toString());
-                String g1 = grade1.getSelectedItem().toString();
-                String g2 = grade2.getSelectedItem().toString();
-                String g3 = grade3.getSelectedItem().toString();
-                String g4 = grade4.getSelectedItem().toString();
-
-                //Conditions
-                //subject 1
-
-                if (g1.equals("A+")) {
-                    grad1 = 4.00;
-
-                } else if (g1.equals("A")) {
-                    grad1 = 4.00;
-
-                } else if (g1.equals("A-")) {
-                    grad1 = 3.70;
-
-                } else if (g1.equals("B+")) {
-                    grad1 = 3.30;
-
-                } else if (g1.equals("B")) {
-                    grad1 = 3.00;
-
-                } else if (g1.equals("B-")) {
-                    grad1 = 2.70;
-
-                } else if (g1.equals("C+")) {
-                    grad1 = 2.30;
-
-                } else if (g1.equals("C")) {
-                    grad1 = 2.00;
-
-                } else if (g1.equals("C-")) {
-                    grad1 = 1.70;
-
-                } else if (g1.equals("D+")) {
-                    grad1 = 1.30;
-
-                } else if (g1.equals("D")) {
-                    grad1 = 1.00;
-
-                } else{
-                    grad1 = 0.00;
-
-
-
-                    //subject 2
-
-                } if (g2.equals("A+")) {
-                    grad2 = 4.00;
-
-                } else if (g2.equals("A")) {
-                    grad2 = 4.00;
-
-                } else if (g2.equals("A-")) {
-                    grad2 = 3.70;
-
-                } else if (g2.equals("B+")) {
-                    grad2 = 3.30;
-
-                } else if (g2.equals("B")) {
-                    grad2 = 3.00;
-
-                } else if (g2.equals("B-")) {
-                    grad2 = 2.70;
-
-                } else if (g2.equals("C+")) {
-                    grad2 = 2.30;
-
-                } else if (g2.equals("C")) {
-                    grad2 = 2.00;
-
-                } else if (g2.equals("C-")) {
-                    grad2 = 1.70;
-
-                } else if (g2.equals("D+")) {
-                    grad2 = 1.30;
-
-                } else if (g2.equals("D")) {
-                    grad2 = 1.00;
-
-                } else{
-                    grad2 = 0.00;
-
-                }
-
-
-                //subject 3
-
-
-                if (g3.equals("A+")) {
-                    grad3 = 4.00;
-
-                } else if (g3.equals("A")) {
-                    grad3 = 4.00;
-
-                } else if (g3.equals("A-")) {
-                    grad3 = 3.70;
-
-                } else if (g3.equals("B+")) {
-                    grad3 = 3.30;
-
-                } else if (g3.equals("B")) {
-                    grad3 = 3.00;
-
-                } else if (g3.equals("B-")) {
-                    grad3 = 2.70;
-
-                } else if (g3.equals("C+")) {
-                    grad3 = 2.30;
-
-                } else if (g3.equals("C")) {
-                    grad3 = 2.00;
-
-                } else if (g3.equals("C-")) {
-                    grad3 = 1.70;
-
-                } else if (g3.equals("D+")) {
-                    grad3 = 1.30;
-
-                } else if (g3.equals("D")) {
-                    grad3 = 1.00;
-
-                } else{
-                    grad3 = 0.00;
-
-                }
-
-
-
-                //subject 4
-
-                if (g4.equals("A+")) {
-                    grad4 = 4.00;
-
-                } else if (g4.equals("A")) {
-                    grad4 = 4.00;
-
-                } else if (g4.equals("A-")) {
-                    grad4 = 3.70;
-
-                } else if (g4.equals("B+")) {
-                    grad4 = 3.30;
-
-                } else if (g4.equals("B")) {
-                    grad4 = 3.00;
-
-                } else if (g4.equals("B-")) {
-                    grad4 = 2.70;
-
-                } else if (g4.equals("C+")) {
-                    grad4 = 2.30;
-
-                } else if (g4.equals("C")) {
-                    grad4 = 2.00;
-
-                } else if (g4.equals("C-")) {
-                    grad4 = 1.70;
-
-                } else if (g4.equals("D+")) {
-                    grad4 = 1.30;
-
-                } else if (g4.equals("D")) {
-                    grad4 = 1.00;
-
-                } else{
-                    grad4 = 0.00;
-
-                }
-
-
-                //calculations
-                tot_credit = c1 + c2 + c3 + c4;
-                tot_grade = (grad1 * c1) + (grad2 * c2) + (grad3 * c3) + (grad4 * c4);
-                gpa = (tot_grade / tot_credit);
-
-
-
-
-                //pass data to the displayGPAActivity
-                Intent intent=new Intent(GpaActivity.this,displayGPAActivity.class);
-                intent.putExtra("gpa",String.valueOf(gpa));
-                startActivity(intent);
 
             }
         });
@@ -309,6 +108,203 @@ public class GpaActivity extends AppCompatActivity {
     }
 
 
+    public void calGPA(){
+
+
+        Spinner credit1 = (Spinner) findViewById(R.id.spinner);
+        Spinner credit2 = (Spinner) findViewById(R.id.spinner2);
+        Spinner credit3 = (Spinner) findViewById(R.id.spinner3);
+        Spinner credit4 = (Spinner) findViewById(R.id.spinner4);
+        Spinner grade1 = (Spinner) findViewById(R.id.spinner5);
+        Spinner grade2 = (Spinner) findViewById(R.id.spinner6);
+        Spinner grade3 = (Spinner) findViewById(R.id.spinner7);
+        Spinner grade4 = (Spinner) findViewById(R.id.spinner8);
+
+
+        //get selected values from the spinners
+             double c1 = Double.parseDouble(credit1.getSelectedItem().toString());
+                double c2 = Double.parseDouble(credit2.getSelectedItem().toString());
+                double c3 = Double.parseDouble(credit3.getSelectedItem().toString());
+                double c4 = Double.parseDouble(credit4.getSelectedItem().toString());
+                String g1 = grade1.getSelectedItem().toString();
+                String g2 = grade2.getSelectedItem().toString();
+                String g3 = grade3.getSelectedItem().toString();
+                String g4 = grade4.getSelectedItem().toString();
+
+                //Conditions
+                //subject 1
+
+                if (g1.equals("A+")) {
+                    grad1 = 4.00;
+
+                } else if (g1.equals("A")) {
+                    grad1 = 4.00;
+
+                } else if (g1.equals("A-")) {
+                    grad1 = 3.70;
+
+                } else if (g1.equals("B+")) {
+                    grad1 = 3.30;
+
+                } else if (g1.equals("B")) {
+                    grad1 = 3.00;
+
+                } else if (g1.equals("B-")) {
+                    grad1 = 2.70;
+
+                } else if (g1.equals("C+")) {
+                    grad1 = 2.30;
+
+                } else if (g1.equals("C")) {
+                    grad1 = 2.00;
+
+                } else if (g1.equals("C-")) {
+                    grad1 = 1.70;
+
+                } else if (g1.equals("D+")) {
+                    grad1 = 1.30;
+
+                } else if (g1.equals("D")) {
+                    grad1 = 1.00;
+
+                } else{
+                    grad1 = 0.00;
+
+                    //subject 2
+
+                } if (g2.equals("A+")) {
+                    grad2 = 4.00;
+
+                } else if (g2.equals("A")) {
+                    grad2 = 4.00;
+
+                } else if (g2.equals("A-")) {
+                    grad2 = 3.70;
+
+                } else if (g2.equals("B+")) {
+                    grad2 = 3.30;
+
+                } else if (g2.equals("B")) {
+                    grad2 = 3.00;
+
+                } else if (g2.equals("B-")) {
+                    grad2 = 2.70;
+
+                } else if (g2.equals("C+")) {
+                    grad2 = 2.30;
+
+                } else if (g2.equals("C")) {
+                    grad2 = 2.00;
+
+                } else if (g2.equals("C-")) {
+                    grad2 = 1.70;
+
+                } else if (g2.equals("D+")) {
+                    grad2 = 1.30;
+
+                } else if (g2.equals("D")) {
+                    grad2 = 1.00;
+
+                } else{
+                    grad2 = 0.00;
+
+                }
+                //subject 3
+
+                if (g3.equals("A+")) {
+                    grad3 = 4.00;
+
+                } else if (g3.equals("A")) {
+                    grad3 = 4.00;
+
+                } else if (g3.equals("A-")) {
+                    grad3 = 3.70;
+
+                } else if (g3.equals("B+")) {
+                    grad3 = 3.30;
+
+                } else if (g3.equals("B")) {
+                    grad3 = 3.00;
+
+                } else if (g3.equals("B-")) {
+                    grad3 = 2.70;
+
+                } else if (g3.equals("C+")) {
+                    grad3 = 2.30;
+
+                } else if (g3.equals("C")) {
+                    grad3 = 2.00;
+
+                } else if (g3.equals("C-")) {
+                    grad3 = 1.70;
+
+                } else if (g3.equals("D+")) {
+                    grad3 = 1.30;
+
+                } else if (g3.equals("D")) {
+                    grad3 = 1.00;
+
+                } else{
+                    grad3 = 0.00;
+
+                }
+                //subject 4
+
+                if (g4.equals("A+")) {
+                    grad4 = 4.00;
+
+                } else if (g4.equals("A")) {
+                    grad4 = 4.00;
+
+                } else if (g4.equals("A-")) {
+                    grad4 = 3.70;
+
+                } else if (g4.equals("B+")) {
+                    grad4 = 3.30;
+
+                } else if (g4.equals("B")) {
+                    grad4 = 3.00;
+
+                } else if (g4.equals("B-")) {
+                    grad4 = 2.70;
+
+                } else if (g4.equals("C+")) {
+                    grad4 = 2.30;
+
+                } else if (g4.equals("C")) {
+                    grad4 = 2.00;
+
+                } else if (g4.equals("C-")) {
+                    grad4 = 1.70;
+
+                } else if (g4.equals("D+")) {
+                    grad4 = 1.30;
+
+                } else if (g4.equals("D")) {
+                    grad4 = 1.00;
+
+                } else{
+                    grad4 = 0.00;
+
+                }
+
+
+                //calculations
+                tot_credit = c1 + c2 + c3 + c4;
+                tot_grade = (grad1 * c1) + (grad2 * c2) + (grad3 * c3) + (grad4 * c4);
+                gpa = (tot_grade / tot_credit);
+
+
+
+
+                //pass data to the displayGPAActivity
+                Intent intent=new Intent(GpaActivity.this,displayGPAActivity.class);
+                intent.putExtra("gpa",String.valueOf(gpa));
+                startActivity(intent);
+
+
+
+    }
 
 }
 

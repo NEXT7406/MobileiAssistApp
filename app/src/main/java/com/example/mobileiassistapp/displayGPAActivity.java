@@ -23,6 +23,8 @@ public class displayGPAActivity extends AppCompatActivity {
         //set the value of gpa to textview
         text.setText(getIntent().getStringExtra("gpa"));
 
+
+
         //Button
         home=(Button)findViewById(R.id.button3);
         save=(Button)findViewById(R.id.button4);

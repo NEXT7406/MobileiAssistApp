@@ -3,14 +3,10 @@ package com.example.mobileiassistapp;
 public class SaveGpa {
     private String title;
     private double gpa;
-
     //constructor
-
     public SaveGpa() {
     }
-
     //create getters and setters
-
     public String getTitle() {
         return title;
     }

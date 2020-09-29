@@ -53,11 +53,7 @@ public class saveGPAActivity extends AppCompatActivity {
         //Reference to the firebase
 
         dbRef=FirebaseDatabase.getInstance().getReference().child("savegpa");
-
-
-
         //on click to the save button
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +65,6 @@ public class saveGPAActivity extends AppCompatActivity {
                     else if (TextUtils.isEmpty(txt2.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Empty gpa", Toast.LENGTH_SHORT).show();
                     else {
-
                         //If fields are not empty insert the data
 
                         gpa.setTitle(txt1.getText().toString().trim());
@@ -82,7 +77,6 @@ public class saveGPAActivity extends AppCompatActivity {
                 } catch (NumberFormatException num) {
                     //if the gpa is a string value then display an invalid message. -Validation
                     Toast.makeText(getApplicationContext(), "Invalid gpa", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
@@ -103,14 +97,11 @@ public class saveGPAActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChildren()) {
                             // set values
-
                             txt1.setText(dataSnapshot.child("title").getValue().toString());
                             txt2.setText(dataSnapshot.child("gpa").getValue().toString());
 
                         }else
                             Toast.makeText(getApplicationContext(),"Cannot find save1",Toast.LENGTH_SHORT).show();
-
-
                     }
 
                     @Override
@@ -118,8 +109,6 @@ public class saveGPAActivity extends AppCompatActivity {
 
                     }
                 });
-
-
 
             }
         });
