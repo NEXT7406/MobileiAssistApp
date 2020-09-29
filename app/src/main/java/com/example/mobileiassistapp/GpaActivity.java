@@ -2,14 +2,12 @@ package com.example.mobileiassistapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class GpaActivity extends AppCompatActivity {
     Button calculate;
@@ -30,8 +28,18 @@ public class GpaActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Spinner credit1 = (Spinner) findViewById(R.id.spinner);
+                Spinner credit2 = (Spinner) findViewById(R.id.spinner2);
+                Spinner credit3 = (Spinner) findViewById(R.id.spinner3);
+                Spinner credit4 = (Spinner) findViewById(R.id.spinner4);
+                Spinner grade1 = (Spinner) findViewById(R.id.spinner5);
+                Spinner grade2 = (Spinner) findViewById(R.id.spinner6);
+                Spinner grade3 = (Spinner) findViewById(R.id.spinner7);
+                Spinner grade4 = (Spinner) findViewById(R.id.spinner8);
 
-                calGPA();
+               calGPA(Double.parseDouble(credit1.getSelectedItem().toString()),Double.parseDouble(credit2.getSelectedItem().toString()),Double.parseDouble(credit3.getSelectedItem().toString()),
+                       Double.parseDouble(credit4.getSelectedItem().toString()),grade1.getSelectedItem().toString(),grade2.getSelectedItem().toString(),
+                       grade3.getSelectedItem().toString(),grade4.getSelectedItem().toString());
 
 
             }
@@ -108,28 +116,8 @@ public class GpaActivity extends AppCompatActivity {
     }
 
 
-    public void calGPA(){
+    public double calGPA(double c1,double c2,double c3,double c4, String g1,String g2,String g3,String g4){
 
-
-        Spinner credit1 = (Spinner) findViewById(R.id.spinner);
-        Spinner credit2 = (Spinner) findViewById(R.id.spinner2);
-        Spinner credit3 = (Spinner) findViewById(R.id.spinner3);
-        Spinner credit4 = (Spinner) findViewById(R.id.spinner4);
-        Spinner grade1 = (Spinner) findViewById(R.id.spinner5);
-        Spinner grade2 = (Spinner) findViewById(R.id.spinner6);
-        Spinner grade3 = (Spinner) findViewById(R.id.spinner7);
-        Spinner grade4 = (Spinner) findViewById(R.id.spinner8);
-
-
-        //get selected values from the spinners
-             double c1 = Double.parseDouble(credit1.getSelectedItem().toString());
-                double c2 = Double.parseDouble(credit2.getSelectedItem().toString());
-                double c3 = Double.parseDouble(credit3.getSelectedItem().toString());
-                double c4 = Double.parseDouble(credit4.getSelectedItem().toString());
-                String g1 = grade1.getSelectedItem().toString();
-                String g2 = grade2.getSelectedItem().toString();
-                String g3 = grade3.getSelectedItem().toString();
-                String g4 = grade4.getSelectedItem().toString();
 
                 //Conditions
                 //subject 1
@@ -289,22 +277,33 @@ public class GpaActivity extends AppCompatActivity {
                 }
 
 
+
+
+
                 //calculations
                 tot_credit = c1 + c2 + c3 + c4;
                 tot_grade = (grad1 * c1) + (grad2 * c2) + (grad3 * c3) + (grad4 * c4);
                 gpa = (tot_grade / tot_credit);
 
-
-
-
                 //pass data to the displayGPAActivity
                 Intent intent=new Intent(GpaActivity.this,displayGPAActivity.class);
                 intent.putExtra("gpa",String.valueOf(gpa));
                 startActivity(intent);
-
-
-
+        return gpa;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
