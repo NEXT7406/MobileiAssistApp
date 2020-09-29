@@ -12,7 +12,21 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
+private GpaActivity gpaActivity;
+@Before
+public void setup(){
 
+    gpaActivity=new GpaActivity();
+}
+
+//test 01
+@Test
+    public void calculategpa(){
+    double result=gpaActivity.calGPA(4,4,3,2,"C","A","C+","B-");
+    double delta=Double.parseDouble("0.1");
+    assertEquals(2.792307692307692,result,delta);
+
+}
 
 
 
