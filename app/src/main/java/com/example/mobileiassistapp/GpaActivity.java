@@ -120,6 +120,7 @@ public class GpaActivity extends AppCompatActivity {
     }
 
 
+
     public double calGPA(double c1,double c2,double c3,double c4, String g1,String g2,String g3,String g4){
                 //subject 1
                 if (g1.equals("A+")) {

@@ -1,6 +1,48 @@
 <resources>
     <string name="app_name">MobileiAssistApp</string>
 
+    <string name="create_account">Create an account</string>
+    <string name="forget_pw">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="item_todo_delete">Delete</string>
+    <string name="todo_clear_history">Clear All History</string>
+    <string name="todo_history_title">TO DO HISTORY</string>
+    <string name="about_title">ABOUT APP</string>
+    <string name="about_facebook_btn">Like us on Facebook </string>
+    <string name="about_content">Mobilei Assist is an app created for help university students to manage their studies.This app contains various tools to help students to calculate and keep track on their tasks with ease.Main features of this app are GPA marks calculation, Target management, Marking management and Student todo list.New users can use these features just by creating an new account in our app.</string>
+
+
+    <string name="todo_add_new">Add New To Do</string>
+    <string name="todo_task_cal_btn">Start Task calculation</string>
+    <string name="todo_open_history">to do history</string>
+    <string name="todo_title">TO DO</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="add_new_todo">ADD NEW TO DO</string>
+    <string name="todo_save_title">To Do Title</string>
+    <string name="todo_message">To Do Message</string>
+    <string name="todo_save_btn">Save To Do</string>
+    <string name="add_existing_email">Add existing email here</string>
+    <string name="reset_password">Reset Password</string>
+
+
+    <string name="home_gpa">Gpa Calculator</string>
+    <string name="home_target">Target Calculator</string>
+    <string name="home_marking">Marking Calculator</string>
+    <string name="home_todo">TO-DO</string>
+    <string name="home_about">ABOUT</string>
+
+
+    <string name="sign_up_email">Email</string>
+    <string name="sign_up_password">Password</string>
+    <string name="sign_up_re_pass">Re-enter Password</string>
+    <string name="sign_up_btn">Sign Up</string>
+
+
+
+
+
+
     <string name="msg1_gpa"><u>GPA Calculator</u></string>
     <string name="msg2_gpa">Subject</string>
     <string name="msg3_gpa">Credit</string>
@@ -98,3 +140,4 @@
 
 
 </resources>
+

@@ -103,9 +103,11 @@ public class MarkingActivity extends AppCompatActivity {
          return ca;
     }
 
+
     public float calculateFinalMarks(float finalExamMarks){
         float finalMarks = finalExamMarks*50/100;
         return finalMarks;
     }
 
 }
+
