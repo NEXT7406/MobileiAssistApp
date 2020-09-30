@@ -142,7 +142,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            // email sent
+                         
                             loadSign.setIndeterminate(false);
                             Toast.makeText(getApplicationContext(), "Registration successful! verify your email", Toast.LENGTH_LONG).show();
                             loadSign.setVisibility(View.INVISIBLE);
