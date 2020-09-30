@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Marking3Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="403dp"
+        android:layout_height="719dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47">
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="141dp"
+            android:layout_height="52dp"
+
+            android:background="#000000"
+            android:text="@string/btn_delete"
+            android:textColor="#feb63d"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.313" />
+
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+
+            android:background="#000000"
+            android:text="@string/btn_update"
+            android:textColor="#feb63d"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.796" />
+
+        <Button
+            android:id="@+id/view_all_btn"
+            android:layout_width="142dp"
+            android:layout_height="45dp"
+            android:background="#000000"
+            android:text="@string/btn_view"
+            android:textColor="#feb63d"
+
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.136" />
+
+        <EditText
+            android:id="@+id/id_to_update"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:hint="@string/hint_id"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <EditText
+            android:id="@+id/sub_name_to_update"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:hint="@string/hint_name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.607" />
+
+        <EditText
+            android:id="@+id/ca_to_update"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:hint="@string/hint_ca"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.695" />
+
+        <EditText
+            android:id="@+id/total_to_update"
+            android:layout_width="183dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:hint="@string/hint_total"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.793" />
+
+        <EditText
+            android:id="@+id/id_to_delete"
+            android:layout_width="168dp"
+            android:layout_height="54dp"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.314" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

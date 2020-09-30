@@ -1,34 +1,44 @@
 {
   "project_info": {
+
     "project_number": "524646226810",
     "firebase_url": "https://mobileiassistapp.firebaseio.com",
     "project_id": "mobileiassistapp",
     "storage_bucket": "mobileiassistapp.appspot.com"
+
   },
   "client": [
     {
       "client_info": {
+
         "mobilesdk_app_id": "1:524646226810:android:57d5eb4254332944e8d4c3",
+
         "android_client_info": {
           "package_name": "com.example.mobileiassistapp"
         }
       },
       "oauth_client": [
         {
+
           "client_id": "524646226810-butiqdni6q0c2b8dnkdmtlh6122hh1q3.apps.googleusercontent.com",
+
           "client_type": 3
         }
       ],
       "api_key": [
         {
+
           "current_key": "AIzaSyBMJEmvC6nxw_OeFN8DKFwgMqHtsbzfrs0"
+
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+
               "client_id": "524646226810-butiqdni6q0c2b8dnkdmtlh6122hh1q3.apps.googleusercontent.com",
+
               "client_type": 3
             }
           ]
