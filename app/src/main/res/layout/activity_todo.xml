@@ -64,11 +64,11 @@
         android:layout_width="220dp"
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
-        android:text="Start Task calculation"
+        android:text="@string/todo_task_cal_btn"
         android:textColor="@color/colorBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/todohistoryBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/addBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

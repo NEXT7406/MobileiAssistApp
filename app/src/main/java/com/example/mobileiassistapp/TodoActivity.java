@@ -43,7 +43,7 @@ public class TodoActivity extends AppCompatActivity {
 
     float percentage;
 
-    float filledperc;
+    float filledPercentage;
 
 
 
@@ -74,11 +74,13 @@ public class TodoActivity extends AppCompatActivity {
                     todoTargetBtn.setText("reset task calculation");
                     isTargetActivity =1;
                     todoListSize = todoList.size();
+
                     calculatePercentagePerItem(todoListSize);
 
-                    filledperc = 0;
 
-                    todoTargetPercentage.setText("TODO "+String.format("%.0f", filledperc) +"% COMPLETED");
+                    filledPercentage = 0;
+
+                    todoTargetPercentage.setText("TODO "+String.format("%.0f", filledPercentage) +"% COMPLETED");
 
                 }
                 else if( isTargetActivity == 1){
@@ -128,6 +130,12 @@ public class TodoActivity extends AppCompatActivity {
         percentage = 100/todoListSize;
         return percentage;
     }
+
+    public float calFilledPercentage(float percentage){
+        filledPercentage = filledPercentage + percentage;
+        return filledPercentage;
+    }
+
 
     @Override
     protected void onResume() {
@@ -241,8 +249,10 @@ public class TodoActivity extends AppCompatActivity {
                         if(isTargetActivity == 1){
 
                             todoListSize = todoList.size();
-                            filledperc = filledperc + percentage;
-                            todoTargetPercentage.setText("TODO "+String.format("%.0f", filledperc) +"% COMPLETED");
+
+                            calFilledPercentage(percentage);
+
+                            todoTargetPercentage.setText("TODO "+String.format("%.0f", filledPercentage) +"% COMPLETED");
 
 
 

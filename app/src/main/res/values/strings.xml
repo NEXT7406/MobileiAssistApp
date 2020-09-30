@@ -12,6 +12,7 @@
 
 
     <string name="todo_add_new">Add New To Do</string>
+    <string name="todo_task_cal_btn">Start Task calculation</string>
     <string name="todo_open_history">to do history</string>
     <string name="todo_title">TO DO</string>
     <string name="login_email">Email</string>
