@@ -37,8 +37,24 @@ public void setup(){
         assertEquals(2.3909090,result,delta);
 
     }
+//test 03
+@Test
+public void calculategpaTest3(){
 
+    double result=gpaActivity.calGPA(4,4,1,2,"A","B-","A+","D+");
+    double delta=Double.parseDouble("0.1");
+    assertEquals(3.03636363,result,delta);
 
+}
+//test 04
+    @Test
+public void calculategpaTest4(){
+
+    double result=gpaActivity.calGPA(1,3,1,2,"E","B-","C","D+");
+    double delta=Double.parseDouble("0.1");
+    assertEquals(1.81428571428,result,delta);
+
+}
 
 
 
