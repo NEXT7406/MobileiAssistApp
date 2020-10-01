@@ -98,7 +98,7 @@ public class TargetActivity extends AppCompatActivity {
 
             }
         });
-        Button reset = (Button)findViewById(R.id.reset);
+
 
 
 
