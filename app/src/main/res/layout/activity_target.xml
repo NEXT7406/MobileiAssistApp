@@ -6,20 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".TargetActivity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="160dp"
-        android:layout_height="58dp"
-        android:background="#000000"
-        android:text="Clear"
-        android:textColor="#FEC63D"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -152,38 +139,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:gravity="center"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463"
-        android:gravity="center"/>
+        app:layout_constraintVertical_bias="0.463" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="212dp"
-        android:layout_height="30dp"
+        android:layout_width="157dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber4"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CAL"
-        android:onClick="calculatetarget"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3"
+        app:layout_constraintVertical_bias="0.068" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

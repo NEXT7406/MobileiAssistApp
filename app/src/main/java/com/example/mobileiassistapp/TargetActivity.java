@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class TargetActivity extends AppCompatActivity {
     private TextView answer;
     private Spinner spinner;
 
-    Spinner_TargetActivity sp ;
+    Spinner_TargetActivity sp;
 
     //spinner section
 
@@ -97,6 +98,7 @@ public class TargetActivity extends AppCompatActivity {
 
             }
         });
+        Button reset = (Button)findViewById(R.id.reset);
 
 
 
@@ -158,6 +160,9 @@ public class TargetActivity extends AppCompatActivity {
         });
 
     }
+
+
+
     public void calculatetarget(View v) {
         Spinner_TargetActivity Spinner_TargetActivity = (Spinner_TargetActivity )spinner.getSelectedItem();
         targetmarks(Spinner_TargetActivity);
