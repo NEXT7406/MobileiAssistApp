@@ -27,11 +27,8 @@
         <activity android:name=".displayGPAActivity" android:parentActivityName=".GpaActivity" />
 
         <activity android:name=".Marking3Activity"></activity>
-      
-        <activity
-            android:name=".Main3Activity"
-            android:label="@string/title_activity_main3"
-            android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity android:name=".Marking2Activity" />
 
 
