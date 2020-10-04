@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MobileiAssistApp</string>
 
+
     //dinusha
 
         <string name="msge1">Target Calculator</string>
@@ -14,7 +15,7 @@
         <string name="msge9">Final Weight(%)</string>
         <string name="msge10">Clear</string>
 
-    <string-array name="grades_array">
+   <string-array name="grades_array">
         <item>A+</item>
         <item>A</item>
         <item>A-</item>
@@ -28,4 +29,148 @@
         <item>D</item>
         <item>F</item>
     </string-array>
+
+    <string name="create_account">Create an account</string>
+    <string name="forget_pw">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="item_todo_delete">Delete</string>
+    <string name="todo_clear_history">Clear All History</string>
+    <string name="todo_history_title">TO DO HISTORY</string>
+    <string name="about_title">ABOUT APP</string>
+    <string name="about_facebook_btn">Like us on Facebook </string>
+    <string name="about_content">Mobilei Assist is an app created for help university students to manage their studies.This app contains various tools to help students to calculate and keep track on their tasks with ease.Main features of this app are GPA marks calculation, Target management, Marking management and Student todo list.New users can use these features just by creating an new account in our app.</string>
+
+
+    <string name="todo_add_new">Add New To Do</string>
+    <string name="todo_task_cal_btn">Start Task calculation</string>
+    <string name="todo_open_history">to do history</string>
+    <string name="todo_title">TO DO</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="add_new_todo">ADD NEW TO DO</string>
+    <string name="todo_save_title">To Do Title</string>
+    <string name="todo_message">To Do Message</string>
+    <string name="todo_save_btn">Save To Do</string>
+    <string name="add_existing_email">Add existing email here</string>
+    <string name="reset_password">Reset Password</string>
+
+
+    <string name="home_gpa">Gpa Calculator</string>
+    <string name="home_target">Target Calculator</string>
+    <string name="home_marking">Marking Calculator</string>
+    <string name="home_todo">TO-DO</string>
+    <string name="home_about">ABOUT</string>
+
+
+    <string name="sign_up_email">Email</string>
+    <string name="sign_up_password">Password</string>
+    <string name="sign_up_re_pass">Re-enter Password</string>
+    <string name="sign_up_btn">Sign Up</string>
+
+
+
+
+
+
+    <string name="msg1_gpa"><u>GPA Calculator</u></string>
+    <string name="msg2_gpa">Subject</string>
+    <string name="msg3_gpa">Credit</string>
+    <string name="msg4_gpa">Grade</string>
+    <string name="msg5_gpa">Subject 01</string>
+    <string name="msg6_gpa">Subject 02</string>
+    <string name="msg7_gpa">Subject 03</string>
+    <string name="msg8_gpa">Subject 04</string>
+
+    <string-array name="Credit">
+        <item>0.0</item>
+        <item>1.0</item>
+        <item>2.0</item>
+        <item>3.0</item>
+        <item>4.0</item>
+    </string-array>
+
+
+    <string-array name="Grade">
+        <item>Grade</item>
+
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+
+       
+        <item>D+</item>
+        <item>D</item>
+        <item>E</item>
+    </string-array>
+
+    <string name="msg9_gpa">Your GPA is</string>
+    <string name="msg10_gpa">Save my GPA</string>
+    <string name="msg11_gpa">Title</string>
+    <string name="msg12_gpa">GPA</string>
+    <string name="calculate">Calculate</string>
+    <string name="home">Home</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="show">Show</string>
+    <string name="entertitle">Enter title</string>
+    <string name="entergpa">Enter your GPA</string>
+
+
+    //marking
+    <string name="page_name">Marking Calculator</string>
+    <string name="ass1">Assignment 01:- </string>
+    <string name="ass2">Assignment 02:- </string>
+    <string name="mid_marks">Mid marks:- </string>
+    <string name="final_marks">Final marks:- </string>
+    <string name="btn_cal">Calculate</string>
+    <string name="input_placeholder">out of 100</string>
+    // place holder for input fields - activity_marking.xml
+
+    <string name="page_name2">Your marks</string>
+    <string name="ca_marks">CA marks</string>
+    <string name="total_marks">Total marks</string>
+    <string name="btn_save">SAVE</string>
+
+    <string name="page_name3">Save your Data</string>
+    <string name="subject_name">Subject name :-</string>
+    <string name="id">Subject Id :-</string>
+    <string name="btn_add">ADD DATA</string>
+    <string name="btn_update">UPDATE</string>
+    <string name="btn_delete">DELETE</string>
+    <string name="btn_view">VIEW ALL</string>
+
+    //hint activity_marking3.xml
+    <string name="hint_id">ID</string>
+    <string name="hint_name">Subject Name</string>
+    <string name="hint_ca">CA</string>
+    <string name="hint_total">Total</string>
+
+    <string name="page_name4">Save your Data</string>
+    <string name="id2">Id :-</string>
+    <string name="display1">Id :- 01</string>
+    <string name="display2">File name :- Year1,MC</string>
+    <string name="display3">File name :- Year1,ICS</string>
+    <string name="display4">Id :- 02</string>
+    <string name="title_activity_marking3">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
 </resources>
+
+
