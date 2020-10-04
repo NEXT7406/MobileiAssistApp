@@ -1,6 +1,35 @@
 <resources>
     <string name="app_name">MobileiAssistApp</string>
 
+
+    //dinusha
+
+        <string name="msge1">Target Calculator</string>
+        <string name="msge2">CA Marks</string>
+        <string name="msge3">Out of</string>
+        <string name="msge4">Desired Grade</string>
+        <string name="msge5">calculate</string>
+        <string name="msge6">CA Marks</string>
+        <string name="msge7">Out of</string>
+        <string name="msge8">desired grade</string>
+        <string name="msge9">Final Weight(%)</string>
+        <string name="msge10">Clear</string>
+
+   <string-array name="grades_array">
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D+</item>
+        <item>D</item>
+        <item>F</item>
+    </string-array>
+
     <string name="create_account">Create an account</string>
     <string name="forget_pw">Forget Password?</string>
     <string name="login">Login</string>
@@ -63,6 +92,7 @@
 
     <string-array name="Grade">
         <item>Grade</item>
+
         <item>A+</item>
         <item>A</item>
         <item>A-</item>
@@ -71,6 +101,8 @@
         <item>B-</item>
         <item>C+</item>
         <item>C</item>
+
+       
         <item>D+</item>
         <item>D</item>
         <item>E</item>
@@ -140,4 +172,5 @@
 
 
 </resources>
+
 
